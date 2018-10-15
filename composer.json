@@ -1,0 +1,19 @@
+{
+  "name": "skywire/file-copy-plugin",
+  "type": "composer-plugin",
+  "description": "A plugin to allow for dependencies to copy files into the project on install / update",
+  "require": {
+    "php": ">=7.0",
+    "composer-plugin-api": "^1.1",
+    "slowprog/composer-copy-file": "*"
+  },
+  "minimum-stability": "dev",
+  "autoload": {
+    "psr-4": {
+      "Skywire\\FileCopyPlugin\\": "src/"
+    }
+  },
+  "extra": {
+    "class": "Skywire\\FileCopyPlugin\\Plugin"
+  }
+}
