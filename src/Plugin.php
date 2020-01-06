@@ -51,7 +51,11 @@ class Plugin implements PluginInterface, EventSubscriberInterface
                 $toCopy += $package->getExtra()['copy-file'];
             }
         }
-
+        
+        if(!count($toCopy)) {
+            return;
+        }
+        
         $this->validatePaths($toCopy);
 
         // add our pacakge copy config to the root package config, so that slowprog can find it
