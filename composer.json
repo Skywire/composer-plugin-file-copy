@@ -8,6 +8,7 @@
     "skywire/composer-copy-file": "^0.4.0"
   },
   "minimum-stability": "dev",
+  "license": "OSL 3.0",
   "autoload": {
     "psr-4": {
       "Skywire\\FileCopyPlugin\\": "src/"
