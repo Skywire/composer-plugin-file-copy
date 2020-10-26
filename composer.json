@@ -4,7 +4,7 @@
   "description": "A plugin to allow for dependencies to copy files into the project on install / update",
   "require": {
     "php": ">=7.0",
-    "composer-plugin-api": "^1.1",
+    "composer-plugin-api": "^1.1 || ^2.0",
     "skywire/composer-copy-file": "^0.4.0"
   },
   "minimum-stability": "dev",
