@@ -5,7 +5,7 @@ namespace Skywire\FileCopyPlugin;
 use Composer\Composer;
 use Composer\EventDispatcher\EventSubscriberInterface;
 use Composer\IO\IOInterface;
-use Composer\Package\CompletePackage;
+use Composer\Package\CompletePackageInterface;
 use Composer\Plugin\PluginInterface;
 use Composer\Script\ScriptEvents;
 use SlowProg\CopyFile\ScriptHandler;
@@ -47,14 +47,14 @@ class Plugin implements PluginInterface, EventSubscriberInterface
     {
         $packages = $event->getComposer()->getRepositoryManager()->getLocalRepository()->getPackages();
         // find skywire only packages
-        $packages = array_filter($packages, function (CompletePackage $package) {
+        $packages = array_filter($packages, function (CompletePackageInterface $package) {
             return strpos($package->getName(), 'skywire') !== false;
         });
 
         $toCopy = [];
 
         foreach ($packages as $package) {
-            /** @var CompletePackage $package */
+            /** @var CompletePackageInterface $package */
             if ($package->getExtra() && isset($package->getExtra()['copy-file'])) {
                 $toCopy += $package->getExtra()['copy-file'];
             }
